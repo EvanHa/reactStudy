@@ -12,7 +12,7 @@
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
     ></script>
-    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Static Template</title>
   </head>
   <body>
@@ -20,27 +20,33 @@
       This is a static template, there is no bundler or bundling involved!
     </h1>
     <div id="root"></div>
-    <!-- createElement -->
-    <!-- <script>
+    <!-- babel 사용 -->
+    <!-- <script type="text/babel">
       const rootElement = document.getElementById('root');
-      const element = React.createElement('h1', null, 'Hello, world!!');
+      const element = <h1 className="title">Hello, world!!</h1>;
+      ReactDOM.render(element, rootElement);
+    </script> -->
+    <!-- <script type="text/babel">
+      const rootElement = document.getElementById('root');
+
+      // JSX 표현의 장점
+      const text = 'Hello, world';
+      const titleClassName = 'title123';
+      const element = <h1 className={titleClassName}>{text}</h1>;
       ReactDOM.render(element, rootElement);
     </script> -->
 
-    <!-- props를 사용 -->
-    <!-- <script>
+    <!-- spread 연산자 사용 가능 -->
+    <script type="text/babel">
       const rootElement = document.getElementById('root');
-      const element = React.createElement('h1', {
-        children: 'helloworld',
-      });
-      ReactDOM.render(element, rootElement);
-    </script> -->
 
-    <script>
-      const rootElement = document.getElementById('root');
-      const element = React.createElement('h1', {
-        children: ['hello', 'world', 'its', 'me'],
-      });
+      // JSX 표현의 장점
+      const text = 'Hello, world!';
+      const titleClassName = 'title123';
+      const props = { className: titleClassName, children: text };
+      const customH1 = <h1 {...props} />;
+      //const customH1 = (<h1 className={props.className} children={props.children});
+      const element = customH1;
       ReactDOM.render(element, rootElement);
     </script>
   </body>
