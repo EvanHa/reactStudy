@@ -20,33 +20,30 @@
       This is a static template, there is no bundler or bundling involved!
     </h1>
     <div id="root"></div>
-    <!-- babel 사용 -->
-    <!-- <script type="text/babel">
-      const rootElement = document.getElementById('root');
-      const element = <h1 className="title">Hello, world!!</h1>;
-      ReactDOM.render(element, rootElement);
-    </script> -->
-    <!-- <script type="text/babel">
-      const rootElement = document.getElementById('root');
-
-      // JSX 표현의 장점
-      const text = 'Hello, world';
-      const titleClassName = 'title123';
-      const element = <h1 className={titleClassName}>{text}</h1>;
-      ReactDOM.render(element, rootElement);
-    </script> -->
-
-    <!-- spread 연산자 사용 가능 -->
     <script type="text/babel">
       const rootElement = document.getElementById('root');
 
-      // JSX 표현의 장점
-      const text = 'Hello, world!';
-      const titleClassName = 'title123';
-      const props = { className: titleClassName, children: text };
-      const customH1 = <h1 {...props} />;
-      //const customH1 = (<h1 className={props.className} children={props.children});
-      const element = customH1;
+      const element = (
+        // <React.Fragment
+        //   children={[
+        //     React.createElement('h1', null, 'Hi'),
+        //     React.createElement('h3', null, 'Bye'),
+        //     React.createElement('h5', null, 'Children'),
+        //   ]}
+        // />
+
+        // <React.Fragment>
+        //   <h1>Hi</h1>
+        //   <h3>Bye</h3>
+        //   <h5>Children</h5>
+        // </React.Fragment>
+
+        <>
+          <h1>Hi</h1>
+          <h3>Bye</h3>
+          <h5>Children</h5>
+        </>
+      );
       ReactDOM.render(element, rootElement);
     </script>
   </body>
