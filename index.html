@@ -23,27 +23,51 @@
     <script type="text/babel">
       const rootElement = document.getElementById('root');
 
-      const element = (
-        // <React.Fragment
-        //   children={[
-        //     React.createElement('h1', null, 'Hi'),
-        //     React.createElement('h3', null, 'Bye'),
-        //     React.createElement('h5', null, 'Children'),
-        //   ]}
-        // />
+      // const paint = () => (
+      //   <>
+      //     <h1>Hi</h1>
+      //     <h3>Bye</h3>
+      //   </>
+      // );
 
-        // <React.Fragment>
-        //   <h1>Hi</h1>
-        //   <h3>Bye</h3>
-        //   <h5>Children</h5>
-        // </React.Fragment>
+      // const element = (
+      //   <>
+      //     {paint()}
+      //     {paint()}
+      //     {paint()}
+      //   </>
+      // );
 
+      // const paint = (title, description) => (
+      //   <>
+      //     <h1>{title}</h1>
+      //     <h3>{description}</h3>
+      //   </>
+      // );
+
+      // const element = (
+      //   <>
+      //     {paint('one', 'one')}
+      //     {paint('two', 'two')}
+      //     {paint('three', 'three')}
+      //   </>
+      // );
+
+      const Paint = ({ title, description }) => (
         <>
-          <h1>Hi</h1>
-          <h3>Bye</h3>
-          <h5>Children</h5>
+          <h1>{title}</h1>
+          <h3>{description}</h3>
         </>
       );
+
+      const element = (
+        <>
+          <Paint title="one" description="one" />
+          <Paint title="two" description="two" />
+          <Paint title="three" description="three" />
+        </>
+      );
+
       ReactDOM.render(element, rootElement);
     </script>
   </body>
