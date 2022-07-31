@@ -17,46 +17,29 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- <script>
+      const rootElement = document.getElementById('root');
+
+      function random() {
+        const number = Math.floor(Math.random() * (10 - 1) + 1);
+
+        const element = `<button>${number}</button>`;
+        rootElement.innerHTML = element;
+      }
+
+      setInterval(random, 1000);
+    </script> -->
     <script type="text/babel">
       const rootElement = document.getElementById('root');
 
-      // const Text = ({ text }) => {
-      //   if (text.charAt(0) === text.charAt(0).toUpperCase()) {
-      //     return <h1>{text}</h1>;
-      //   } else {
-      //     return <h3>{text}</h3>;
-      //   }
-      // };
+      function random() {
+        const number = Math.floor(Math.random() * (10 - 1) + 1);
 
-      // const element = (
-      //   <>
-      //     <Text text="abc" />
-      //     <Text text="Abc" />
-      //   </>
-      // );
-
-      function Number({ number, selected }) {
-        return selected ? <h1>{number}</h1> : <h3>{number}</h3>;
+        const element = <button>{number}</button>;
+        ReactDOM.render(element, rootElement);
       }
 
-      // const element = (
-      //   <>
-      //     <Number number={1} />
-      //     <Number number={2} selected={true} />
-      //     <Number number={3} />
-      //     <Number number={4} />
-      //   </>
-      // );
-
-      const element = (
-        <>
-          {[1, 2, 3, 4, 5, 6].map((number) => (
-            <Number number={number} selected={number === 3} />
-          ))}
-        </>
-      );
-
-      ReactDOM.render(element, rootElement);
+      setInterval(random, 1000);
     </script>
   </body>
 </html>
